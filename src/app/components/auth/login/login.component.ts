@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +8,24 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
 
-  @Input() error: string | null | undefined;
+  loginForm: FormGroup;
 
-  @Output() submitEM = new EventEmitter();
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
-
-  submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+  onSubmit() {
+    if (this.loginForm.valid) {
+      console.log(this.loginForm.value);
+      // Add your login logic here
     }
   }
-  
+
+  onForgotPassword() {
+    // Logic for "Forgot Password" action, e.g., navigate to a reset password page
+    console.log('Forgot Password clicked');
+  }
 }

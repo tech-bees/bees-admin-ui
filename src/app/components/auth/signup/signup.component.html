@@ -1,1 +1,26 @@
-<p>signup works!</p>
+<mat-card class="login-card">
+    <h2 class="centered-title">Sign Up</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="left-aligned-form">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Create a password" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm your password" />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" class="full-width centered-button">Sign Up</button>
+    </form>
+  
+    <div class="footer">
+      <a mat-button routerLink="/auth/login" class="back-to-login">Already have an account? Login</a>
+    </div>
+  </mat-card>
+  
