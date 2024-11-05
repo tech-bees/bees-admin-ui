@@ -1,0 +1,51 @@
+.login-card {
+    width: 400px; /* Match the width of the login card exactly */
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Increase shadow by 50% */
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .centered-title {
+    text-align: left; /* Align the title to the left */
+    margin-bottom: 1.5rem; /* Add some space below the title */
+  }
+  
+  .left-aligned-form {
+    display: flex; /* Use flexbox to align the form items */
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .full-width {
+    width: 100%; /* Make input fields full width */
+    margin-bottom: 1rem; /* Add space between input fields */
+  }
+  
+  .centered-button {
+    margin-top: 1rem; /* Add space above the button */
+    width: 100%; /* Make button full width */
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #888; /* Light gray for footer text */
+  }
+
+  .centered-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .back-to-login {
+    color: #007bff; /* Link color */
+    text-decoration: underline; /* Underline for emphasis */
+    cursor: pointer; /* Pointer cursor to indicate clickable */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .back-to-login:hover {
+    color: rgba(0, 123, 255, 0.8); /* Slightly darker on hover */
+  }

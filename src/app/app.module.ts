@@ -6,19 +6,33 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/auth/login/login.component';
-import { LoginModule } from './components/auth/login/login.module';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { ForgotComponent } from './components/auth/forgot/forgot.component';
+import { UserComponent } from './components/admin/user/user.component';
+import { RoleComponent } from './components/admin/role/role.component';
+import { PermissionComponent } from './components/admin/permission/permission.component'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './shared/modules/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotComponent,
+    UserComponent,
+    RoleComponent,
+    PermissionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
-    LoginModule
+    FormsModule, 
+    MaterialModule,
+    ReactiveFormsModule,
+    RouterModule 
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  //schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     provideAnimationsAsync()
   ],
