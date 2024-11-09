@@ -13,6 +13,7 @@ import { RoleComponent } from './components/admin/role/role.component';
 import { PermissionComponent } from './components/admin/permission/permission.component'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/modules/material.module';
+import { HomeComponent } from './components/pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MaterialModule } from './shared/modules/material.module';
     UserComponent,
     RoleComponent,
     PermissionComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

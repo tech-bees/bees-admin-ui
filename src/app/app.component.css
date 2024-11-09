@@ -1,10 +1,21 @@
 .app-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 64px);
-    background-color: #f7f2f6; /* Light background color */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f3a0b3, #d19fca, #af55c5, #6a11cb); /* Vibrant gradient purple background */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animation for the gradient background */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
   
   .app-toolbar {
     display: flex;

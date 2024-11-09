@@ -5,6 +5,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { ForgotComponent } from './components/auth/forgot/forgot.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'auth/forgot',
     component: ForgotComponent
+  },
+  {
+    path: 'pages/home',
+    component: HomeComponent
   }
 ];
 
