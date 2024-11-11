@@ -4,11 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-forgot',
   templateUrl: './forgot.component.html',
-  styleUrl: './forgot.component.css'
+  styleUrls: ['./forgot.component.css']
 })
 export class ForgotComponent {
 
   forgotPasswordForm: FormGroup;
+  submitted = false;
 
   constructor(private fb: FormBuilder) {
     this.forgotPasswordForm = this.fb.group({
@@ -16,10 +17,24 @@ export class ForgotComponent {
     });
   }
 
+  // Access controls using index signature
+  getControl(controlName: string) {
+    return this.forgotPasswordForm.controls[controlName];
+  }
+
+  // Helper function to check for errors safely
+  hasError(controlName: string, errorName: string) {
+    const control = this.getControl(controlName);
+    return control && control.errors ? control.errors[errorName] : null;
+  }
+
   onSubmit() {
-    if (this.forgotPasswordForm.valid) {
-      // Handle sending reset link logic here
-      console.log('Reset link sent to:', this.forgotPasswordForm.value.email);
+    this.submitted = true;
+
+    if (this.forgotPasswordForm.invalid) {
+      return;
     }
+    // Handle sending reset link logic here
+    console.log('Reset link sent to:', this.forgotPasswordForm.value.email);
   }
 }

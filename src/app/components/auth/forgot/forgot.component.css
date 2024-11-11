@@ -1,42 +1,118 @@
-.login-card {
-    width: 350px;
-    padding: 20px;
-    margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    background-color: white;
-  }
-  
-  .centered-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .centered-form {
-    display: flex;
+.forgot-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .forgot-card {
     flex-direction: column;
-    align-items: center;
   }
-  
-  .centered-button {
-    margin-top: 1rem;
-  }
-  
-  .footer {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 14px;
-    color: #888;
-  }
-  
-  .back-to-login {
-    color: #007bff;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .back-to-login:hover {
-    color: rgba(0, 123, 255, 0.8);
-  }
-  
+}
+
+.forgot-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-section {
+  flex: 1;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.forgot-section {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centered-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mat-form-field-flex {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.mat-form-field-label {
+  color: #555;
+}
+
+.mat-form-field-underline {
+  display: none;
+}
+
+.mat-form-field:hover .mat-form-field-flex {
+  background-color: #e0e0e0;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: rgba(201, 217, 249, 0.9);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #888;
+}
+
+.back-to-login {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-to-login:hover {
+  color: rgba(0, 123, 255, 0.8);
+}
