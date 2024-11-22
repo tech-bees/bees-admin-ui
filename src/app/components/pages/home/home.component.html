@@ -1,53 +1,59 @@
 <div class="home-container">
-  <nav class="top-nav">
-      <div class="left-nav">
-          <div class="profile">
-              <img src="assets/images/DSC_0059.JPG" alt="Profile Picture">
-              <span>Username</span>
-          </div>
-          <ul>
-              <li><a href="#home" title="Home">Home</a></li>
-              <li><a href="#about" title="About">About</a></li>
-              <li><a href="#contact" title="Contact">Contact</a></li>
-          </ul>
-      </div>
-      <input type="text" class="search-bar" placeholder="Search...">
-  </nav>
-  <div class="main-content">
-      <nav class="sidebar">
-          <header>
-              <h1>CRM Application</h1>
-          </header>
-          <ul>
-              <li><a href="#dashboard" title="Dashboard">Dashboard</a></li>
-              <li><a href="#clients" title="Clients">Clients</a></li>
-              <li><a href="#sales" title="Sales">Sales</a></li>
-              <li><a href="#reports" title="Reports">Reports</a></li>
-              <li><a href="#settings" title="Settings">Settings</a></li>
-          </ul>
-      </nav>
-      <div class="content">
-          <header>
-              <h1>Welcome to Your CRM</h1>
-              <p>Manage your customer relationships efficiently.</p>
-          </header>
-          <section class="features">
-              <div class="feature" title="Feature 1">
-                  <h2>Feature 1</h2>
-                  <p>Short description of feature 1.</p>
-              </div>
-              <div class="feature" title="Feature 2">
-                  <h2>Feature 2</h2>
-                  <p>Short description of feature 2.</p>
-              </div>
-              <div class="feature" title="Feature 3">
-                  <h2>Feature 3</h2>
-                  <p>Short description of feature 3.</p>
-              </div>
-          </section>
-          <footer>
-              <p>&copy; 2024 CRM Application. All rights reserved.</p>
-          </footer>
-      </div>
-  </div>
+    <mat-toolbar color="primary" class="top-nav">
+        <button mat-icon-button class="menu-icon" (click)="toggleSidebar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="crm-name">
+            <h1>Awesome CRM</h1>
+        </div>
+        <div class="search-container">
+            <input matInput type="text" class="search-bar" placeholder="Search..."/>
+            <button mat-icon-button class="search-icon">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <div class="profile">
+            <button mat-icon-button class="notification-icon">
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <img src="assets/images/DSC_0059.JPG" alt="Profile Picture">
+        </div>
+    </mat-toolbar>
+    <div class="main-content">
+        <nav class="sidebar" [ngClass]="{'collapsed': isSidebarCollapsed}">
+            <header>
+                <h1>CRM Application</h1>
+            </header>
+            <ul>
+                <li><a href="#dashboard" title="Dashboard"><mat-icon>dashboard</mat-icon> Dashboard</a></li>
+                <li><a href="#clients" title="Clients"><mat-icon>people</mat-icon> Clients</a></li>
+                <li><a href="#sales" title="Sales"><mat-icon>shopping_cart</mat-icon> Sales</a></li>
+                <li><a href="#reports" title="Reports"><mat-icon>assessment</mat-icon> Reports</a></li>
+                <li><a href="#settings" title="Settings"><mat-icon>settings</mat-icon> Settings</a></li>
+            </ul>
+        </nav>
+        <div class="content" [ngClass]="{'expanded': isSidebarCollapsed}">
+            <header>
+                <h1>Welcome to Your CRM</h1>
+                <p>Manage your customer relationships efficiently.</p>
+            </header>
+            <section class="features">
+                <div class="feature" title="Feature 1">
+                    <h2>Feature 1</h2>
+                    <p>Short description of feature 1.</p>
+                </div>
+                <div class="feature" title="Feature 2">
+                    <h2>Feature 2</h2>
+                    <p>Short description of feature 2.</p>
+                </div>
+                <div class="feature" title="Feature 3">
+                    <h2>Feature 3</h2>
+                    <p>Short description of feature 3.</p>
+                </div>
+            </section>
+            <footer>
+                <p>&copy; 2024 CRM Application. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
 </div>

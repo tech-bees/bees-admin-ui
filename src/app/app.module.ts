@@ -14,6 +14,10 @@ import { PermissionComponent } from './components/admin/permission/permission.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/modules/material.module';
 import { HomeComponent } from './components/pages/home/home.component';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatButtonModule } from '@angular/material/button'; 
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { HomeComponent } from './components/pages/home/home.component';
     FormsModule, 
     MaterialModule,
     ReactiveFormsModule,
-    RouterModule 
+    RouterModule,
+    MatToolbarModule, 
+    MatButtonModule, 
+    MatIconModule, 
+    MatInputModule, 
   ],
   //schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [

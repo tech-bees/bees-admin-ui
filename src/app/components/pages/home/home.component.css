@@ -4,7 +4,7 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: #f4f7fa;
+  background-color: #f0f4f8;
 }
 
 .home-container {
@@ -14,89 +14,111 @@ body, html {
   width: 100vw;
 }
 
-.top-nav {
+.mat-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;
-  color: white;
-  padding: 10px 20px;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  background-color: #3f51b5; /* Unified color scheme */
+  padding: 0 20px; /* Added padding for better alignment */
 }
 
-.left-nav {
+.crm-name h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: white;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+.search-container {
+  flex-grow: 1;
   display: flex;
   align-items: center;
+  max-width: 600px; /* Increased max-width for better visibility */
+  background-color: white;
+  border-radius: 5px;
+  height: 40px; /* Adjusted height for better alignment */
+  padding: 0 10px; /* Added padding inside the search bar */
+  margin-left: 40px;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  background-color: transparent; /* Transparent background to blend with the container */
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #3f51b5;
 }
 
 .profile {
   display: flex;
   align-items: center;
+  margin-left: auto; /* Push profile to right */
   margin-right: 20px;
+}
+
+.notification-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white; /* Match the icon color to the rest of the toolbar */
+  margin-right: 20px; /* Space between notification and profile picture */
 }
 
 .profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 10px;
   border: 2px solid white; /* Added circular border */
-}
-
-.search-bar {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-right: 40px; /* Adjusted margin */
-}
-
-.top-nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-.top-nav ul li {
-  margin: 0 10px;
-}
-
-.top-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: block;
-}
-
-.top-nav ul li a:hover {
-  background-color: #1abc9c;
-}
-
-.main-content {
-  display: flex;
-  margin-top: 60px; /* Adjusted for top nav */
-  height: calc(100vh - 60px); /* Adjusted for top nav */
 }
 
 .sidebar {
   width: 200px;
-  background-color: #2c3e50;
+  background-color: #3f51b5; /* Unified color scheme */
   color: white;
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: all 0.3s; /* Smooth transition for collapsing and expanding */
+}
+
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f0f4f8; /* Unified color scheme */
+  overflow-y: auto;
+  transition: all 0.3s; /* Smooth transition for responsiveness */
+}
+
+.content.expanded {
+  margin-left: 0;
 }
 
 .sidebar header {
   padding: 20px;
-  background-color: #1abc9c;
+  background-color: #303f9f; /* Unified color scheme */
   text-align: center;
-  border-bottom: 1px solid #1abc9c;
+  border-bottom: 1px solid #303f9f;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Align icon and text */
   align-items: center;
   height: 80px; /* Adjusted height */
 }
@@ -104,13 +126,16 @@ body, html {
 .sidebar header h1 {
   margin: 0;
   font-size: 1.5em;
+  color: white;
 }
 
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar ul li {
@@ -124,30 +149,33 @@ body, html {
 }
 
 .sidebar ul li:hover {
-  background-color: #34495e;
+  background-color: #283593;
 }
 
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #ecf0f1;
-  overflow-y: auto;
+ul li {
+  margin: 0 10px;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 64px; /* Adjusted for top nav */
+  height: calc(100vh - 64px); /* Adjusted for top nav */
 }
 
 .content header {
   margin-bottom: 30px;
-  border-bottom: 2px solid #1abc9c;
+  border-bottom: 2px solid #303f9f; /* Unified color scheme */
 }
 
 .content header h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #2c3e50;
+  color: #3f51b5;
 }
 
 .content header p {
   font-size: 1.2em;
-  color: #34495e;
+  color: #303f9f;
 }
 
 .features {
@@ -173,7 +201,7 @@ body, html {
 
 .feature h2 {
   margin-bottom: 10px;
-  color: #1abc9c;
+  color: #3f51b5; /* Unified color scheme */
 }
 
 footer {
@@ -182,7 +210,7 @@ footer {
   color: #777;
   text-align: center;
   width: 100%;
-  border-top: 1px solid #1abc9c;
+  border-top: 1px solid #303f9f; /* Unified color scheme */
   padding-top: 10px;
 }
 
