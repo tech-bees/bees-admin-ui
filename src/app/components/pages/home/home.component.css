@@ -22,8 +22,8 @@ body, html {
   width: 100%;
   top: 0;
   z-index: 1000;
-  background-color: #3f51b5; /* Unified color scheme */
-  padding: 0 20px; /* Added padding for better alignment */
+  background-color: #3f51b5;
+  padding: 0 20px;
 }
 
 .crm-name h1 {
@@ -39,11 +39,11 @@ body, html {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  max-width: 600px; /* Increased max-width for better visibility */
+  max-width: 600px;
   background-color: white;
   border-radius: 5px;
-  height: 40px; /* Adjusted height for better alignment */
-  padding: 0 10px; /* Added padding inside the search bar */
+  height: 40px;
+  padding: 0 10px;
   margin-left: 40px;
 }
 
@@ -51,7 +51,7 @@ body, html {
   border: none;
   outline: none;
   flex-grow: 1;
-  background-color: transparent; /* Transparent background to blend with the container */
+  background-color: transparent;
 }
 
 .search-icon {
@@ -65,8 +65,9 @@ body, html {
 .profile {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Push profile to right */
+  margin-left: auto;
   margin-right: 20px;
+  position: relative;
 }
 
 .notification-icon {
@@ -74,25 +75,57 @@ body, html {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: white; /* Match the icon color to the rest of the toolbar */
-  margin-right: 20px; /* Space between notification and profile picture */
+  color: white;
+  margin-right: 20px;
 }
 
 .profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid white; /* Added circular border */
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.menu-item {
+  color: #000;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item mat-icon {
+  margin-right: 10px;
+  color: #3f51b5;
+}
+
+.menu-item:hover {
+  background-color: #0f7eec;
 }
 
 .sidebar {
   width: 200px;
-  background-color: #3f51b5; /* Unified color scheme */
+  background-color: #3f51b5;
   color: white;
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: all 0.3s; /* Smooth transition for collapsing and expanding */
+  transition: all 0.3s;
 }
 
 .sidebar.collapsed {
@@ -103,9 +136,9 @@ body, html {
 .content {
   flex-grow: 1;
   padding: 20px;
-  background-color: #f0f4f8; /* Unified color scheme */
+  background-color: #f0f4f8;
   overflow-y: auto;
-  transition: all 0.3s; /* Smooth transition for responsiveness */
+  transition: all 0.3s;
 }
 
 .content.expanded {
@@ -114,13 +147,13 @@ body, html {
 
 .sidebar header {
   padding: 20px;
-  background-color: #303f9f; /* Unified color scheme */
+  background-color: #303f9f;
   text-align: center;
   border-bottom: 1px solid #303f9f;
   display: flex;
-  justify-content: space-between; /* Align icon and text */
+  justify-content: space-between;
   align-items: center;
-  height: 80px; /* Adjusted height */
+  height: 80px;
 }
 
 .sidebar header h1 {
@@ -158,13 +191,13 @@ ul li {
 
 .main-content {
   display: flex;
-  margin-top: 64px; /* Adjusted for top nav */
-  height: calc(100vh - 64px); /* Adjusted for top nav */
+  margin-top: 64px;
+  height: calc(100vh - 64px);
 }
 
 .content header {
   margin-bottom: 30px;
-  border-bottom: 2px solid #303f9f; /* Unified color scheme */
+  border-bottom: 2px solid #303f9f;
 }
 
 .content header h1 {
@@ -180,9 +213,13 @@ ul li {
 
 .features {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 30px;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  flex-grow: 1; /* Ensure the section grows to fill available space */
+  margin-bottom: 0; /* Remove bottom margin to use full space */
+  overflow-y: auto; /* Enable vertical scrolling if necessary */
+  width: 100%; /* Ensure the section takes up the full width */
 }
 
 .feature {
@@ -190,37 +227,40 @@ ul li {
   padding: 20px;
   margin: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  flex-basis: calc(33% - 40px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Adjust width to fit within the container */
   transition: transform 0.3s;
+  flex: 1; /* Ensure each feature grows to fill available space */
 }
 
 .feature:hover {
   transform: scale(1.05);
 }
 
+
+
 .feature h2 {
   margin-bottom: 10px;
-  color: #3f51b5; /* Unified color scheme */
+  color: #3f51b5;
 }
 
 footer {
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #777;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #303f
+}
+
+
+footer {
   text-align: center;
   width: 100%;
   border-top: 1px solid #303f9f; /* Unified color scheme */
-  padding-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .features {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .feature {
-      flex-basis: calc(100% - 40px);
-  }
+  padding: 10px 0;
+  background-color: #f0f4f8; /* Match background to content */
+  font-size: 0.9em; /* Adjust font size */
+  color: #777; /* Adjust font color */
+  position: fixed; /* Ensure the footer is fixed at the bottom */
+  bottom: 0; /* Align the footer to the bottom */
+  left: 0; /* Ensure the footer spans the full width */
+  z-index: 1000; /* Ensure the footer stays above other elements */
 }

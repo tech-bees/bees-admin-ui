@@ -13,10 +13,24 @@
             </button>
         </div>
         <div class="profile">
-            <button mat-icon-button class="notification-icon">
+            <button mat-icon-button class="notification-icon" (click)="showNotification()">
                 <mat-icon>notifications</mat-icon>
             </button>
-            <img src="assets/images/DSC_0059.JPG" alt="Profile Picture">
+            <img src="assets/images/DSC_0059.JPG" alt="Profile Picture" (click)="toggleProfileMenu()">
+            <div *ngIf="profileMenuOpen" class="profile-menu">
+                <div class="menu-item" (click)="goToSettings()">
+                    <mat-icon>settings</mat-icon> Settings
+                </div>
+                <div class="menu-item" (click)="goToProfile()">
+                    <mat-icon>account_circle</mat-icon> Profile
+                </div>
+                <div class="menu-item" (click)="disableNotifications()">
+                    <mat-icon>notifications_off</mat-icon> Disable Notifications
+                </div>
+                <div class="menu-item" (click)="signOut()">
+                    <mat-icon>exit_to_app</mat-icon> Sign Out
+                </div>
+            </div>
         </div>
     </mat-toolbar>
     <div class="main-content">

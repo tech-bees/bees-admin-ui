@@ -18,6 +18,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list'; 
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,12 @@ import { MatInputModule } from '@angular/material/input';
     MatToolbarModule, 
     MatButtonModule, 
     MatIconModule, 
+    MatInputModule,
+    MatSnackBarModule, // Ensure this module is imported  
+    MatIconModule, 
+    MatListModule, 
     MatInputModule, 
+    MatButtonModule,
   ],
   //schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
