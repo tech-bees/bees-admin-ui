@@ -1,3 +1,12 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Matching background color with home page */
+}
+
 .login-card {
   display: flex;
   flex-direction: row; /* Ensures the sections are side by side */
@@ -23,7 +32,7 @@
 
 .welcome-section {
   flex: 1;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: #3f51b5; /* Matching primary color */
   color: white;
   padding: 2rem;
   display: flex;
@@ -31,6 +40,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.logo {
+  max-width: 150px; /* Adjust size as needed */
+  margin-bottom: 1rem;
 }
 
 .login-section {
@@ -50,6 +64,7 @@
 .centered-title {
   text-align: center;
   margin-bottom: 1.5rem;
+  color: #3f51b5; /* Matching primary color */
 }
 
 mat-form-field {
@@ -78,7 +93,7 @@ mat-form-field:hover .mat-form-field-flex {
 button {
   width: 100%;
   margin-top: 1rem;
-  background-color: #007bff;
+  background-color: #3f51b5; /* Matching primary color */
   color: white;
   border: none;
   border-radius: 6px;
@@ -88,7 +103,7 @@ button {
 }
 
 button:hover {
-  background-color: rgba(201, 217, 249, 0.9);
+  background-color: #303f9f; /* Darker shade for hover */
   transform: translateY(-2px);
 }
 
@@ -97,7 +112,7 @@ button:active {
 }
 
 .footer a {
-  color: #007bff;
+  color: #3f51b5; /* Matching primary color */
   text-decoration: none;
 }
 
@@ -113,14 +128,14 @@ button:active {
 }
 
 .forgot-password {
-  color: #007bff;
+  color: #3f51b5; /* Matching primary color */
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-  color: rgba(0, 123, 255, 0.8);
+  color: rgba(63, 81, 181, 0.8); /* Slightly lighter on hover */
 }
 
 .signup-link {
@@ -130,12 +145,26 @@ button:active {
 }
 
 .sign-up {
-  color: #007bff;
+  color: #3f51b5; /* Matching primary color */
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .sign-up:hover {
-  color: rgba(0, 123, 255, 0.8);
+  color: rgba(63, 81, 181, 0.8); /* Slightly lighter on hover */
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #303f9f; /* Unified color scheme */
+  padding: 10px 0;
+  background-color: #f0f4f8; /* Match background to content */
+  font-size: 0.9em; /* Adjust font size */
+  color: #777; /* Adjust font color */
+  position: fixed; /* Ensure the footer is fixed at the bottom */
+  bottom: 0; /* Align the footer to the bottom */
+  left: 0; /* Ensure the footer spans the full width */
+  z-index: 1000; /* Ensure the footer stays above other elements */
 }

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 64px);
-  background: linear-gradient(135deg, #f3a0b3, #d19fca, #af55c5, #6a11cb); /* Vibrant gradient purple background */
+  background: linear-gradient(135deg, #91a7cf, #6964cc, #2c39b3, #0d0483); /* Vibrant gradient purple background */
   background-size: 200% 200%;
   animation: gradientAnimation 10s ease infinite;
 }
@@ -22,7 +22,7 @@
     align-items: center;
     padding: 0 16px;
     transition: background-color 0.3s ease;
-    background-color: rgba(201, 217, 249, 0.9); /* Light sky blue for toolbar background */
+    background-color: rgba(14, 65, 167, 0.9); /* Light sky blue for toolbar background */
   }
   
   .toolbar-title {
@@ -46,7 +46,7 @@
   }
   
   .app-toolbar:hover {
-    background-color: rgba(201, 217, 249, 1); /* Solid light sky blue on hover */
+    background-color: rgb(4, 27, 73); /* Solid light sky blue on hover */
   }
   
   
