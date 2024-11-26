@@ -1,13 +1,12 @@
 <mat-card class="login-card">
-  <div class="welcome-section">
-    <img src="E:\logo.png" alt="Tech Bees Logo" class="logo">
-<!-- Add your logo URL here -->
-    <h1>Welcome to Login Page</h1>
+  <div class="welcome-section"> 
+    <h1>Welcome</h1>
     <p>Please sign in to continue</p>
   </div>
   <div class="login-section">
     <h2 class="centered-title">Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="login-error" *ngIf="isLoginFailed">Invali username or password!</div>
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" placeholder="Enter your email" />
@@ -31,9 +30,6 @@
         <span>Don't have an account? </span>
         <a mat-button routerLink="/auth/signup" class="sign-up">Sign Up</a>
       </div>
-    </div>
-    <footer>
-      <p>&copy; 2024 CRM Application. All rights reserved.</p>
-  </footer>
+    </div> 
   </div>
 </mat-card>

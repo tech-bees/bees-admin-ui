@@ -1,48 +1,63 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
+import { StorageService } from '../../../shared/services/storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   loginForm: FormGroup;
   submitted = false;
+  roles: string[] = [];
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router,   
+    private authService: AuthService, 
+    private storageService: StorageService) {
+      
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+  } 
+  
+  ngOnInit(): void {
+    if (this.storageService.isLoggedIn()) {
+      this.isLoggedIn = true;
+      this.roles = this.storageService.getUser().roles;
+    }
   }
-
-  // Access controls using index signature
-  getControl(controlName: string) {
-    return this.loginForm.controls[controlName];
-  }
-
+ 
   // Helper function to check for errors safely
   hasError(controlName: string, errorName: string) {
-    const control = this.getControl(controlName);
-    return control && control.errors ? control.errors[errorName] : null;
+    return this.loginForm.controls[controlName].hasError(errorName);
   }
 
-  onSubmit() {
+  login(): void {
     this.submitted = true;
-
     if (this.loginForm.invalid) {
       return;
-    }
-    console.log(this.loginForm.value);
-    // Navigate to dashboard on successful login 
-    this.router.navigate(['/pages/home']);
-  }
+    } 
+    this.authService.login(this.loginForm.value.email,this.loginForm.value.password).subscribe({
+      next: data => {
+        this.storageService.saveUser(data); 
+        this.roles = this.storageService.getUser().roles;
+        this.router.navigate(['/pages/home']);
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    });
 
-  onForgotPassword() {
-    console.log('Forgot Password clicked');
-    // Logic for "Forgot Password" action
-  }
+  }   
 }

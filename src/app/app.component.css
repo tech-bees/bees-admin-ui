@@ -3,9 +3,8 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 64px);
-  background: linear-gradient(135deg, #91a7cf, #6964cc, #2c39b3, #0d0483); /* Vibrant gradient purple background */
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
+  background-size: auto;
+  background-image: url('../assets/image.png'); 
 }
 
 /* Animation for the gradient background */

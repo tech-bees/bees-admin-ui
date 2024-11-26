@@ -1,10 +1,10 @@
 <mat-card class="signup-card">
   <div class="info-section">
-    <h1>Welcome to Sign Up Page</h1>
+    <h1>Welcome</h1>
     <p>Create a new account to get started</p>
   </div>
   <div class="signup-section">
-    <h2 class="centered-title">Sign Up</h2>
+    <h2 class="centered-title">Sign-Up</h2>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
@@ -27,11 +27,13 @@
         <mat-error *ngIf="submitted && hasError('confirmPassword', 'mismatch')">Passwords do not match.</mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit">Sign Up</button>
-    </form>
-
+      <button mat-raised-button color="primary" type="submit">Register</button>
+    </form> 
     <div class="footer">
-      <a mat-button routerLink="/auth/login" class="back-to-login">Already have an account? Login</a>
+      <div class="signup-link">
+        <span>Already have an account? </span>
+        <a mat-button routerLink="/auth/login" class="sign-up">Login</a>
+      </div>
     </div>
   </div>
 </mat-card>

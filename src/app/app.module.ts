@@ -21,6 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list'; 
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from './shared/helpers/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,10 +51,11 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule, 
     MatInputModule, 
     MatButtonModule,
+    HttpClientModule
   ],
   //schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(), httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
