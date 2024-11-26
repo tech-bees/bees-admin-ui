@@ -1,35 +1,38 @@
-<mat-card class="login-card">
-  <div class="welcome-section"> 
-    <h1>Welcome</h1>
-    <p>Please sign in to continue</p>
-  </div>
-  <div class="login-section">
-    <h2 class="centered-title">Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <div class="login-error" *ngIf="isLoginFailed">Invali username or password!</div>
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" placeholder="Enter your email" />
-        <mat-error *ngIf="submitted && hasError('email', 'required')">Email is required.</mat-error>
-        <mat-error *ngIf="submitted && hasError('email', 'email')">Invalid email format.</mat-error>
-      </mat-form-field>
+<div class="app-container">
+  <mat-card class="login-card">
+    <!-- Your existing login card content -->
+    <div class="welcome-section"> 
+      <h1>Welcome</h1>
+      <p>Please sign in to continue</p>
+    </div>
+    <div class="login-section">
+      <h2 class="centered-title">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="login-error" *ngIf="isLoginFailed">Invalid username or password!</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Enter your email" />
+          <mat-error *ngIf="submitted && hasError('email', 'required')">Email is required.</mat-error>
+          <mat-error *ngIf="submitted && hasError('email', 'email')">Invalid email format.</mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" placeholder="Enter your password" />
-        <mat-error *ngIf="submitted && hasError('password', 'required')">Password is required.</mat-error>
-        <mat-error *ngIf="submitted && hasError('password', 'minlength')">Password must be at least 6 characters long.</mat-error>
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter your password" />
+          <mat-error *ngIf="submitted && hasError('password', 'required')">Password is required.</mat-error>
+          <mat-error *ngIf="submitted && hasError('password', 'minlength')">Password must be at least 6 characters long.</mat-error>
+        </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit">Login</button>
-    </form>
-    
-    <div class="footer">
-      <a mat-button routerLink="/auth/forgot" class="forgot-password">Forgot Password?</a>
-      <div class="signup-link">
-        <span>Don't have an account? </span>
-        <a mat-button routerLink="/auth/signup" class="sign-up">Sign Up</a>
-      </div>
-    </div> 
-  </div>
-</mat-card>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </form>
+      
+      <div class="footer">
+        <a mat-button routerLink="/auth/forgot" class="forgot-password">Forgot Password?</a>
+        <div class="signup-link">
+          <span>Don't have an account? </span>
+          <a mat-button routerLink="/auth/signup" class="sign-up">Sign Up</a>
+        </div>
+      </div> 
+    </div>
+  </mat-card>
+</div>

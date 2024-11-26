@@ -7,6 +7,19 @@ body, html {
   background-color: #f0f4f8; /* Matching background color with home page */
 }
 
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  width: 100vw; /* Ensure the container takes up the full width of the viewport */
+  background-size: cover; /* Ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-image: url('../../../../assets/bg2.jpg');
+  position: relative; /* Allows positioning of child elements */
+}
+
 .login-card {
   display: flex;
   flex-direction: row; /* Ensures the sections are side by side */
@@ -16,7 +29,7 @@ body, html {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #dbe0e0;
   overflow: hidden; /* Ensures child elements stay within rounded corners */
 }
 
